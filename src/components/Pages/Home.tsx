@@ -1,6 +1,12 @@
-import Button from "../UI/Atoms/Button/Button";
+import CheckTags from "../UI/Atoms/CheckableTags/CheckTags";
+import Card from "../UI/Organisms/Card/Card";
 
 const Home = () => {
-  return <Button />;
+  return (
+    <>
+      <Card />
+      <CheckTags />
+    </>
+  );
 };
 export default Home;

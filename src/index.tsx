@@ -1,14 +1,13 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom";
 import Home from "./components/Pages/Home";
 import "./index.less";
 import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Home />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
-
 reportWebVitals();
