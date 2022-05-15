@@ -12,7 +12,7 @@ function CheckTags() {
     setSelectedTags(nextSelectedTags);
   };
   return (
-    <>
+    <div className="ml-3">
       {tagsData.map((tag) => (
         <CheckableTag
           className="rounded-xl text-base"
@@ -23,7 +23,7 @@ function CheckTags() {
           {tag}
         </CheckableTag>
       ))}
-    </>
+    </div>
   );
 }
 
