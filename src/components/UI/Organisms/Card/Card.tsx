@@ -1,7 +1,6 @@
-import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { Card as AntCard } from "antd";
 import Input from "../../Atoms/Input/Input";
-import Tag from "../../Atoms/Tag/Tag";
+import DisplayTags from "../../Molecules/DisplayTagsbalance/DisplayTags";
 import Modal from "../Modal/Modal";
 
 function Card() {
@@ -13,14 +12,7 @@ function Card() {
         className="w-4/12 h-80 rounded-lg ml-20"
         hoverable={true}
       >
-        <div className="justify-end flex">
-          <Tag color={"cyan"} icon={<ArrowUpOutlined />}>
-            income
-          </Tag>
-          <Tag color={"error"} icon={<ArrowDownOutlined />}>
-            expense
-          </Tag>
-        </div>
+        <DisplayTags />
         <Input />
         <h2 className="ml-[20%] mt-1">Total</h2>
         <div className="text-center cyan text-4xl font-semibold">1,000,000</div>

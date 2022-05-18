@@ -1,5 +1,4 @@
 import { Card } from "antd";
-import React from "react";
 import NewEntry from "../../Molecules/NewEntry/NewEntry";
 import SearchFilter from "../../Molecules/SearchBar/SearchFilter";
 function EntryLines() {
@@ -14,8 +13,18 @@ function EntryLines() {
           <SearchFilter />
         </div>
       </div>
-      <NewEntry />
-      <NewEntry />
+      <NewEntry
+        Category="Transition"
+        Type="income"
+        Description="Going shopping 22"
+        Date="Date"
+      />
+      <NewEntry
+        Type="expense"
+        Category="Salary"
+        Description="Going shopping 23"
+        Date="Date"
+      />
     </Card>
   );
 }
