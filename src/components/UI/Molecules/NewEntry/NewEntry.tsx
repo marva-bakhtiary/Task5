@@ -28,8 +28,8 @@ const NewEntry = ({ Date, Description, Category, Type }: EntryProps) => {
               income
             </Tag>
           ) : (
-            <Tag color={"orange"} icon={<ArrowUpOutlined />}>
-              Expense
+            <Tag color={"red"} icon={<ArrowUpOutlined />}>
+              expense
             </Tag>
           )}
         </div>

@@ -1,5 +1,6 @@
 import { Card as AntCard } from "antd";
 import Input from "../../Atoms/Input/Input";
+import DisplayBalance from "../../Molecules/DisplayeBalance/DisplayBalance";
 import DisplayTags from "../../Molecules/DisplayTagsbalance/DisplayTags";
 import Modal from "../Modal/Modal";
 
@@ -14,8 +15,7 @@ function Card() {
       >
         <DisplayTags />
         <Input />
-        <h2 className="ml-[20%] mt-1">Total</h2>
-        <div className="text-center cyan text-4xl font-semibold">1,000,000</div>
+       <DisplayBalance value="1,500,000"/>
         <Modal />
       </AntCard>
     </>
