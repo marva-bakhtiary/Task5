@@ -1,7 +1,7 @@
 import { Card } from "antd";
-import NewEntry from "../../Molecules/NewEntry/NewEntry";
+import Entryline from "../../Molecules/Entryline/Entryline";
 import SearchFilter from "../../Molecules/SearchBar/SearchFilter";
-function EntryLines() {
+function EntryLines({ entries }: any) {
   return (
     <Card
       data-testid="CardID"
@@ -13,18 +13,9 @@ function EntryLines() {
           <SearchFilter />
         </div>
       </div>
-      <NewEntry
-        Category="Transition"
-        Type="income"
-        Description="Going shopping 22"
-        Date="Date"
-      />
-      <NewEntry
-        Type="expense"
-        Category="Salary"
-        Description="Going shopping 23"
-        Date="Date"
-      />
+      {entries.map((entry: any) => (
+        <Entryline key={entry.id} {...entry} />
+      ))}
     </Card>
   );
 }

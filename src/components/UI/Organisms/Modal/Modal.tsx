@@ -2,12 +2,16 @@ import { useState } from "react";
 import { Modal as AntModal } from "antd";
 import Button from "../../Atoms/Button/Button";
 import Inputs from "../../Molecules/ModalInputs/Inputs";
-function Modal() {
+function Modal({ addEntry }: any) {
   const [isVisible, setIsVisible] = useState(false);
   const clickHandler = () => {
     setIsVisible(true);
   };
-  const handleOkCancel = () => {
+  const handleCancel = () => {
+    setIsVisible(false);
+  };
+  const handleOk = () => {
+    addEntry();
     setIsVisible(false);
   };
 
@@ -20,8 +24,8 @@ function Modal() {
         okText="Add"
         cancelText="Clear Values"
         visible={isVisible}
-        onOk={handleOkCancel}
-        onCancel={handleOkCancel}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
         <h2 className="orange">Add New Transaction</h2>
         <Inputs />

@@ -15,7 +15,7 @@ function Card() {
       >
         <DisplayTags />
         <Input />
-       <DisplayBalance value="1,500,000"/>
+        <DisplayBalance value="1,500,000" />
         <Modal />
       </AntCard>
     </>

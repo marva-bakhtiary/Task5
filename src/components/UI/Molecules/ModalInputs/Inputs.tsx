@@ -1,5 +1,16 @@
 import { DatePicker, Input, InputNumber, Select } from "antd";
-const Inputs = () => {
+const Inputs = ({
+  note,
+  setNote,
+  amount,
+  setAmount,
+  date,
+  setDate,
+  type,
+  setType,
+  category,
+  setCategory,
+}: any) => {
   const { Option } = Select;
   const { TextArea } = Input;
   const Options = [
@@ -48,9 +59,7 @@ const Inputs = () => {
       id: 11,
     },
   ];
-  const onChange = (value: any) => {
-    console.log("changed", value);
-  };
+
   return (
     <Input.Group compact>
       <label className="cyan font-medium">Type</label>
@@ -58,6 +67,8 @@ const Inputs = () => {
         data-testid="SelectID1"
         defaultValue="Expense"
         className=" w-full mb-5 "
+        value={type}
+        onChange={(event) => setType(event.target.value)}
       >
         <Option value="Expense">Expense</Option>
         <Option value="Income">Income</Option>
@@ -66,11 +77,12 @@ const Inputs = () => {
       <InputNumber
         className=" w-full bg-gray-100 mb-5"
         defaultValue={0}
+        value={amount}
         formatter={(value) =>
           `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         }
         parser={(value) => value.replace(/\$\s?|(,*)/g, "")}
-        onChange={onChange}
+        onChange={(event) => setAmount(event.target.value)}
       />
       <label className="cyan font-medium">Note</label>
       <TextArea
@@ -78,22 +90,25 @@ const Inputs = () => {
         placeholder="Note"
         rows={2}
         className="bg-gray-100"
+        value={note}
+        onChange={(event) => setNote(event.target.value)}
       />
       <label className="cyan font-medium mt-5">Date</label>
       <DatePicker
         data-testid="DateID"
         placeholder="Date"
         className="w-full bg-gray-100 mb-5"
+        value={date}
+        onChange={(event) => setDate(event.target.value)}
       />
       <label className="cyan font-medium">Category</label>
-
-      {/* FIXME: select input doesnt get the bg-color */}
-      {/* FIXME: all inputs doesnt get the border radius */}
 
       <Select
         data-testid="SelectID2"
         defaultValue="Category"
         className="w-full mb-5"
+        value={category}
+        onChange={(event) => setCategory(event.target.value)}
       >
         {Options.map((option) => (
           <Option key={option.id} value={option.value}>

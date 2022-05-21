@@ -2,14 +2,14 @@ import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import React from "react";
 import Tag from "../../Atoms/Tag/Tag";
 
-function DisplayTags() {
+function DisplayTags({ incomeTotal, expenseTotal }: any) {
   return (
     <div className="justify-end flex">
       <Tag color={"cyan"} icon={<ArrowUpOutlined />}>
-        income
+        {incomeTotal}
       </Tag>
       <Tag color={"error"} icon={<ArrowDownOutlined />}>
-        expense
+        {expenseTotal}
       </Tag>
     </div>
   );
